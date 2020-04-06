@@ -1,0 +1,6 @@
+<h3>Pokemon List</h3>
+<div *ngIf="$pokemonResponse | async as pokemonData">
+  <div *ngFor="let pokemon of pokemonData.results">
+    {{pokemon.name}}
+  </div>
+</div>
