@@ -10,6 +10,7 @@ import { CustomerAddComponent } from './pages/customer-add/customer-add.componen
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonListComponent } from './pages/pokemon-list/pokemon-list.component';
 import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { PokemonEffects } from './effects/pokemon.effect';
 import { PokemonReducer } from './reducers/pokemon.reducer';
 
@@ -24,6 +25,9 @@ import { PokemonReducer } from './reducers/pokemon.reducer';
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot({ pokemons: PokemonReducer }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+    }),
     EffectsModule.forRoot([PokemonEffects]),
     HttpClientModule
   ],
