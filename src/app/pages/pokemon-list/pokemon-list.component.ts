@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PokemonService, ResponseData } from 'src/app/sevices/pokemon/pokemon.service';
+import { PokemonService } from 'src/app/sevices/pokemon/pokemon.service';
 import { Observable } from 'rxjs';
+import { Pokemon } from 'src/app/models/pokemon/pokemon';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -8,15 +9,16 @@ import { Observable } from 'rxjs';
   styleUrls: ['./pokemon-list.component.scss']
 })
 export class PokemonListComponent implements OnInit {
-  $pokemonResponse: Observable<ResponseData>;
+  pokemons$: Observable<Pokemon[]>;
 
   constructor(
     private pokemonService: PokemonService
-  ) { }
+  ) {
+    this.pokemonService.loadPokemons();
+  }
 
   ngOnInit() {
-    const itemsPerPage = 10;
-    this.$pokemonResponse = this.pokemonService.getPokemonList(itemsPerPage);
+    this.pokemons$ = this.pokemonService.selectAll();
   }
 
 }

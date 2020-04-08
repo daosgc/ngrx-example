@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Pokemon } from 'src/app/models/pokemon/pokemon';
-import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { PokemonState } from 'src/app/reducers/pokemon.reducer';
+import { LoadPokemons } from 'src/app/actions/pokemon.actions';
+import { selectPokemons } from 'src/app/selectors/pokemon.selectors';
 
 export interface ResponseData {
   count: number;
@@ -15,11 +17,14 @@ export interface ResponseData {
 export class PokemonService {
 
   constructor(
-    private httpClient: HttpClient
+    private store: Store<PokemonState>
   ) { }
 
-  public getPokemonList(itemsPerPage: number): Observable<ResponseData> {
-    const apiURL = `https://pokeapi.co/api/v2/pokemon?limit=${itemsPerPage}`;
-    return this.httpClient.get<ResponseData>(apiURL);
+  public loadPokemons() {
+    this.store.dispatch(new LoadPokemons());
+  }
+
+  public selectAll() {
+    return this.store.select(selectPokemons);
   }
 }
