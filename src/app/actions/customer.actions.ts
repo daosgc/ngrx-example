@@ -1,8 +1,8 @@
 import { Action } from '@ngrx/store';
 
 export enum CustomerActionTypes {
-  Add = '[Customer Component] Add',
-  Remove = '[Customer Component] Remove'
+  ADD_CUSTOMER    = '[Customer] ADD_CUSTOMER',
+  REMOVE_CUSTOMER = '[Customer] REMOVE_CUSTOMER',
 }
 
 export class ActionEx implements Action {
@@ -11,13 +11,13 @@ export class ActionEx implements Action {
 }
 
 export class CustomerAdd implements ActionEx {
-  readonly type = CustomerActionTypes.Add;
+  readonly type = CustomerActionTypes.ADD_CUSTOMER;
   constructor(public payload: any) {
   }
 }
 
 export class CustomerRemove implements ActionEx {
-  readonly type = CustomerActionTypes.Remove;
+  readonly type = CustomerActionTypes.REMOVE_CUSTOMER;
   constructor(public payload: any) {
   }
 }

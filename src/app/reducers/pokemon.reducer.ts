@@ -1,4 +1,4 @@
-import { Pokemon } from '../models/pokemon/pokemon';
+import { Pokemon } from '../models/pokemon';
 import { pokemonActions, PokemonActionTypes } from '../actions/pokemon.actions';
 
 export interface PokemonState {

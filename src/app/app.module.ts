@@ -13,6 +13,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { PokemonEffects } from './effects/pokemon.effect';
 import { PokemonReducer } from './reducers/pokemon.reducer';
+import { CustomerReducer } from './reducers/customer.reducer';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { PokemonReducer } from './reducers/pokemon.reducer';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({ pokemons: PokemonReducer }),
+    StoreModule.forRoot({ pokemons: PokemonReducer, customers: CustomerReducer }),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
     }),

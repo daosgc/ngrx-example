@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Pokemon } from 'src/app/models/pokemon/pokemon';
+import { Pokemon } from 'src/app/models/pokemon';
 import { Observable } from 'rxjs';
 
 export interface ResponseData {

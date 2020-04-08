@@ -1,0 +1,16 @@
+.menu-panel {
+
+  .tabs {
+    padding: 10px;
+    text-decoration: none;
+    border: 1px solid #7b7878;
+    border-radius: 10px 10px 0 0;
+    color: black;
+
+    &.active {
+      background: #c3002f;
+      color: white;
+      font-family: bold;
+    }
+  }
+}

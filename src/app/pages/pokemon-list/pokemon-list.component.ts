@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from 'src/app/sevices/pokemon/pokemon.service';
 import { Observable } from 'rxjs';
-import { Pokemon } from 'src/app/models/pokemon/pokemon';
+import { Pokemon } from 'src/app/models/pokemon';
 
 @Component({
   selector: 'app-pokemon-list',
