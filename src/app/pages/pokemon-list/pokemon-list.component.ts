@@ -13,9 +13,7 @@ export class PokemonListComponent implements OnInit {
 
   constructor(
     private pokemonService: PokemonService
-  ) {
-    this.pokemonService.loadPokemons();
-  }
+  ) {}
 
   ngOnInit() {
     this.pokemons$ = this.pokemonService.selectAll();

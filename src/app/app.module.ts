@@ -14,6 +14,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { PokemonEffects } from './effects/pokemon.effect';
 import { PokemonReducer } from './reducers/pokemon.reducer';
 import { CustomerReducer } from './reducers/customer.reducer';
+import { PokemonResolver } from './resolvers/pokemon.resolver';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { CustomerReducer } from './reducers/customer.reducer';
     EffectsModule.forRoot([PokemonEffects]),
     HttpClientModule
   ],
-  providers: [],
+  providers: [PokemonResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
